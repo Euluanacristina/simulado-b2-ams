@@ -9,7 +9,10 @@ const quizCard = document.getElementById('quizCard');
 const resultCard = document.getElementById('resultCard');
 const progressText = document.getElementById('progressText');
 const scoreText = document.getElementById('scoreText');
+const correctText = document.getElementById('correctText');
+const wrongText = document.getElementById('wrongText');
 const unitFilter = document.getElementById('unitFilter');
+const themeToggleBtn = document.getElementById('themeToggleBtn');
 const shuffleBtn = document.getElementById('shuffleBtn');
 const resetBtn = document.getElementById('resetBtn');
 const prevBtn = document.getElementById('prevBtn');
@@ -39,12 +42,47 @@ function parseQuestion(raw) {
   return { stem: stemPart.trim(), options };
 }
 
+function formatQuestionStem(text) {
+  return text
+    .replace(/\s+(I|II|III|IV|V|VI|VII|VIII|IX|X)\.\s/g, '<br><br>$1. ')
+    .replace(/\s+(Descrições:)\s/g, '<br><br>$1 ')
+    .replace(/\s+(Coluna A:)\s/g, '<br><br>$1 ')
+    .replace(/\s+(Coluna B:)\s/g, '<br><br>$1 ')
+    .replace(/\s+(Afirmações:)\s/g, '<br><br>$1 ')
+    .replace(/\s+(Analise as afirmativas a seguir\.)\s/g, '<br><br>$1 ')
+    .trim();
+}
+
+function getVisibleMetrics() {
+  const answered = state.visibleQuestions.filter(question => state.answers[question.id]);
+  const gradableAnswered = answered.filter(question => question.answer);
+  const correct = gradableAnswered.filter(question => state.answers[question.id] === question.answer);
+  return {
+    total: state.visibleQuestions.length,
+    answered: answered.length,
+    correct: correct.length,
+    wrong: gradableAnswered.length - correct.length,
+  };
+}
+
+function updateStatusPanel() {
+  const metrics = getVisibleMetrics();
+  progressText.textContent = metrics.total ? `Questão ${state.currentIndex + 1} de ${metrics.total}` : 'Sem questões';
+  scoreText.textContent = `Respondidas: ${metrics.answered}/${metrics.total}`;
+  correctText.textContent = `Acertos: ${metrics.correct}`;
+  wrongText.textContent = `Erros: ${metrics.wrong}`;
+}
+
+function applyTheme(theme) {
+  document.body.dataset.theme = theme;
+  themeToggleBtn.textContent = theme === 'dark' ? 'Modo claro' : 'Modo escuro';
+}
+
 function renderQuestion() {
   const question = state.visibleQuestions[state.currentIndex];
   if (!question) {
-    quizCard.innerHTML = '<p>Nenhuma questão encontrada para esse filtro.</p>';
-    progressText.textContent = 'Sem questões';
-    scoreText.textContent = 'Respondidas: 0';
+    quizCard.innerHTML = '<p class="muted">Nenhuma questão encontrada para esse filtro.</p>';
+    updateStatusPanel();
     return;
   }
 
@@ -52,8 +90,7 @@ function renderQuestion() {
   const selected = state.answers[question.id];
   const showFeedback = Boolean(selected);
 
-  progressText.textContent = `Questão ${state.currentIndex + 1} de ${state.visibleQuestions.length}`;
-  scoreText.textContent = `Respondidas: ${Object.keys(state.answers).filter(id => state.visibleQuestions.some(q => q.id === id)).length}`;
+  updateStatusPanel();
 
   const optionsHtml = parsed.options.length
     ? parsed.options.map(option => {
@@ -65,7 +102,7 @@ function renderQuestion() {
         return `
           <label class="${classes}">
             <input type="radio" name="answer" value="${option.key}" ${selected === option.key ? 'checked' : ''}>
-            <span><strong>${option.key.toUpperCase()}.</strong> ${option.text}</span>
+            <span class="option-text"><strong>${option.key.toUpperCase()}.</strong> ${option.text}</span>
           </label>
         `;
       }).join('')
@@ -88,7 +125,7 @@ function renderQuestion() {
 
   quizCard.innerHTML = `
     <div class="question-meta">Unidade ${question.unit} • ID ${question.id}</div>
-    <div class="question-text">${parsed.stem}</div>
+    <div class="question-text">${formatQuestionStem(parsed.stem)}</div>
     ${figureHtml}
     <div class="option-list">${optionsHtml}</div>
     ${feedback}
@@ -148,6 +185,15 @@ function finishQuiz() {
     </div>
   `;
 }
+
+const savedTheme = localStorage.getItem('quiz-theme') || 'light';
+applyTheme(savedTheme);
+
+themeToggleBtn.addEventListener('click', () => {
+  const nextTheme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('quiz-theme', nextTheme);
+  applyTheme(nextTheme);
+});
 
 unitFilter.addEventListener('change', applyFilter);
 shuffleBtn.addEventListener('click', shuffleQuestions);
