@@ -16,8 +16,15 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const finishBtn = document.getElementById('finishBtn');
 
+function fixBrokenWords(text) {
+  return text
+    .replace(/\b([A-Za-zÀ-ÿ])\s+([A-Za-zÀ-ÿ]{1,3})\b/g, '$1$2')
+    .replace(/\b([A-Za-zÀ-ÿ]{2,})\s+([A-Za-zÀ-ÿ]{1,2})\b/g, '$1$2')
+    .replace(/\b([A-Za-zÀ-ÿ]{1,2})\s+([A-Za-zÀ-ÿ]{2,})\b/g, '$1$2');
+}
+
 function normalizeSpaces(text) {
-  return text.replace(/\s+/g, ' ').trim();
+  return fixBrokenWords(text.replace(/\s+/g, ' ')).trim();
 }
 
 function parseQuestion(raw) {
