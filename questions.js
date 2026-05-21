@@ -277,9 +277,8 @@ const questions = [
   {
     id: "4.3-4-10",
     unit: "4.3",
-    answer: null,
-    raw: "Questão 4. Sobre Diagrama de Caso de Uso, avalie as afirmativas. I. O diagrama de caso de uso pode guiar o desenvolvimento do projeto, inclusive implementação e testes. II. No diagrama, o boneco representa o processo e a elipse representa a relação entre processos. III. Os principais elementos do diagrama são ator, caso de uso e relacionamento. IV. Um ator sistêmico pode ser um software, sistema completo, módulo ou componente que executa a funcionalidade especificada pelo caso de uso. Escolha uma: a. I e II, apenas. b. I, II e III, apenas. c. I, II, III e IV. d. II, III e IV, apenas. e. I, II e IV, apenas.",
-    note: "Gabarito não identificado com segurança no PDF, mas as alternativas foram recuperadas.",
+    answer: "e",
+    raw: "Questão 4. Sobre Diagrama de Caso de Uso, avalie as afirmativas. I. O diagrama de caso de uso pode guiar o desenvolvimento do projeto, inclusive implementação e testes. II. No diagrama, o boneco representa o processo e a elipse representa a relação entre processos. III. Os principais elementos do diagrama são ator, caso de uso e relacionamento. IV. Um ator sistêmico pode ser um software, sistema completo, módulo ou componente que interage com a funcionalidade especificada pelo caso de uso. Escolha uma: a. I e II, apenas. b. I, II e III, apenas. c. I, II, III e IV. d. II, III e IV, apenas. e. I, III e IV, apenas.",
     figure: "./assets/4.3-4-10.png"
   },
   {
