@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulado B2 - AMS</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <p class="eyebrow">B2 • Análise e Modelagem de Sistemas</p>
+      <h1>Simulado interativo</h1>
+      <p class="subtitle">Questões das Unidades 3 e 4 para estudar de forma mais prática antes da prova.</p>
+    </header>
+
+    <section class="toolbar">
+      <label>
+        Unidade
+        <select id="unitFilter">
+          <option value="all">Todas</option>
+          <option value="3.1">3.1</option>
+          <option value="3.2">3.2</option>
+          <option value="3.3">3.3</option>
+          <option value="4.1">4.1</option>
+          <option value="4.2">4.2</option>
+          <option value="4.3">4.3</option>
+        </select>
+      </label>
+      <button id="shuffleBtn" type="button">Embaralhar</button>
+      <button id="resetBtn" type="button">Refazer</button>
+    </section>
+
+    <section class="status">
+      <div id="progressText">Questão 1 de 1</div>
+      <div id="scoreText">Respondidas: 0</div>
+    </section>
+
+    <section id="quizCard" class="card"></section>
+
+    <section class="nav">
+      <button id="prevBtn" type="button">Anterior</button>
+      <button id="nextBtn" type="button">Próxima</button>
+      <button id="finishBtn" type="button">Finalizar</button>
+    </section>
+
+    <section id="resultCard" class="card hidden"></section>
+  </main>
+
+  <script src="./questions.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

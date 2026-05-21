@@ -1,0 +1,56 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f6fb;
+  color: #1f2937;
+}
+.app {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.hero, .toolbar, .status, .card, .nav {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+.hero { padding: 24px; margin-bottom: 16px; }
+.eyebrow { margin: 0 0 8px; color: #2563eb; font-weight: 700; }
+.hero h1 { margin: 0 0 8px; }
+.subtitle { margin: 0; color: #475569; }
+.toolbar, .status, .nav { display: flex; gap: 12px; align-items: center; justify-content: space-between; padding: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+.toolbar label { display: flex; flex-direction: column; gap: 6px; font-weight: 700; }
+select, button {
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  padding: 10px 14px;
+  font-size: 15px;
+}
+button { cursor: pointer; background: #2563eb; color: white; border: none; }
+button:hover { background: #1d4ed8; }
+button:disabled { background: #94a3b8; cursor: not-allowed; }
+.card { padding: 24px; margin-bottom: 16px; }
+.hidden { display: none; }
+.question-meta { font-size: 14px; color: #2563eb; font-weight: 700; margin-bottom: 8px; }
+.question-text { font-size: 18px; line-height: 1.6; margin-bottom: 20px; white-space: pre-wrap; }
+.option-list { display: grid; gap: 12px; }
+.option {
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.option.correct { border-color: #16a34a; background: #f0fdf4; }
+.option.incorrect { border-color: #dc2626; background: #fef2f2; }
+.feedback { margin-top: 18px; padding: 14px; border-radius: 12px; background: #eff6ff; color: #1e3a8a; }
+.result-grid { display: grid; gap: 10px; }
+.result-item { padding: 12px; border-radius: 10px; background: #f8fafc; }
+.result-item strong { display: block; margin-bottom: 4px; }
+.muted { color: #64748b; }
+@media (max-width: 640px) {
+  .app { padding: 16px; }
+  .question-text { font-size: 16px; }
+}
