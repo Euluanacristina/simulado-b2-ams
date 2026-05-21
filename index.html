@@ -10,13 +10,13 @@
   <main class="app">
     <header class="hero">
       <p class="eyebrow">B2 • Análise e Modelagem de Sistemas</p>
-      <h1>Simulado interativo</h1>
-      <p class="subtitle">Questões das Unidades 3 e 4 para estudar de forma mais prática antes da prova.</p>
+      <h1>Simulado</h1>
+      <p class="subtitle">Questões das Unidades 3 e 4 para revisar antes da prova.</p>
     </header>
 
-    <section class="toolbar">
-      <label>
-        Unidade
+    <section class="topbar">
+      <div class="filter-group">
+        <label for="unitFilter">Filtrar por unidade</label>
         <select id="unitFilter">
           <option value="all">Todas</option>
           <option value="3.1">3.1</option>
@@ -26,17 +26,25 @@
           <option value="4.2">4.2</option>
           <option value="4.3">4.3</option>
         </select>
-      </label>
-      <button id="shuffleBtn" type="button">Embaralhar</button>
-      <button id="resetBtn" type="button">Refazer</button>
+      </div>
+      <div class="action-group">
+        <button id="shuffleBtn" type="button">Embaralhar</button>
+        <button id="resetBtn" type="button">Refazer Simulado</button>
+      </div>
     </section>
 
-    <section class="status">
-      <div id="progressText">Questão 1 de 1</div>
-      <div id="scoreText">Respondidas: 0</div>
+    <section class="status-panel">
+      <div class="status-item">
+        <span class="status-label">Progresso</span>
+        <strong id="progressText">Questão 1 de 1</strong>
+      </div>
+      <div class="status-item">
+        <span class="status-label">Resumo</span>
+        <strong id="scoreText">Respondidas: 0</strong>
+      </div>
     </section>
 
-    <section id="quizCard" class="card"></section>
+    <section id="quizCard" class="card question-card"></section>
 
     <section class="nav">
       <button id="prevBtn" type="button">Anterior</button>
@@ -45,6 +53,10 @@
     </section>
 
     <section id="resultCard" class="card hidden"></section>
+
+    <footer class="page-note">
+      <p>Material organizado para estudo e revisão das unidades da prova B2.</p>
+    </footer>
   </main>
 
   <script src="./questions.js"></script>

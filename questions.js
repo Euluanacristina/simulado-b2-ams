@@ -45,7 +45,8 @@ const questions = [
     id: "3.2-2-2",
     unit: "3.2",
     answer: null,
-    raw: "Questão 2. No processo de Engenharia de Requisitos, associe as etapas descrição dos requisitos, análise do problema, especificação dos requisitos e classificação dos requisitos à figura apresentada no material. Escolha uma: a. 1-6-4-3. b. 3-1-6-4. c. 6-3-4-1. d. 4-3-1-6. e. 3-1-4-6."
+    raw: "Questão 2. No processo de Engenharia de Requisitos, associe as etapas descrição dos requisitos, análise do problema, especificação dos requisitos e classificação dos requisitos à figura apresentada no material. Escolha uma: a. 1-6-4-3. b. 3-1-6-4. c. 6-3-4-1. d. 4-3-1-6. e. 3-1-4-6.",
+    figure: "./assets/3.2-2-2.png"
   },
   {
     id: "3.2-3-3",
@@ -75,7 +76,8 @@ const questions = [
     id: "3.3-1-1",
     unit: "3.3",
     answer: "a",
-    raw: "Questão 1. Sobre Diagrama de Caso de Uso, preencha as lacunas com os elementos de modelagem adequados. O ator está no papel de usuário ou outro sistema que interage com o sistema em desenvolvimento, ou seja, é uma posição ________ ao desenvolvimento. O ________ é um conjunto de ações que o sistema executará, representado por uma elipse. A associação liga um ________ ao caso de uso. Os relacionamentos entre casos de uso são include e ________. A ________ ilustra a necessidade de sobreposição de papéis entre atores. Escolha uma: a. externa / caso de uso / ator / extend / generalização. b. externa / plano / ator / extend / generalização. c. externa / caso de uso / requisito / exclude / justaposição. d. interna / caso de uso / requisito / exclude / justaposição. e. interna / plano / ator / extend / generalização."
+    raw: "Questão 1. Sobre Diagrama de Caso de Uso, preencha as lacunas com os elementos de modelagem adequados. O ator está no papel de usuário ou outro sistema que interage com o sistema em desenvolvimento, ou seja, é uma posição ________ ao desenvolvimento. O ________ é um conjunto de ações que o sistema executará, representado por uma elipse. A associação liga um ________ ao caso de uso. Os relacionamentos entre casos de uso são include e ________. A ________ ilustra a necessidade de sobreposição de papéis entre atores. Escolha uma: a. externa / caso de uso / ator / extend / generalização. b. externa / plano / ator / extend / generalização. c. externa / caso de uso / requisito / exclude / justaposição. d. interna / caso de uso / requisito / exclude / justaposição. e. interna / plano / ator / extend / generalização.",
+    figure: "./assets/3.3-1-1.png"
   },
   {
     id: "3.3-2-2",
@@ -106,13 +108,15 @@ const questions = [
     unit: "3.3",
     answer: null,
     raw: "Questão 3. Sobre a configuração básica da documentação da especificação de requisitos, associe os campos prioridade, data da última alteração, data de criação, identificador e versão. Escolha uma: a. 4-1-5-3-2. b. 1-5-3-4-2. c. 3-2-1-4-5. d. 2-1-5-4-3. e. 5-3-2-1-4.",
-    note: "Gabarito não identificado com segurança no PDF, mas as alternativas foram recuperadas."
+    note: "Gabarito não identificado com segurança no PDF, mas as alternativas foram recuperadas.",
+    figure: "./assets/3.3-3-6.png"
   },
   {
     id: "3.3-1-7",
     unit: "3.3",
     answer: "d",
-    raw: "Questão 1. Em um diagrama de casos de uso de uma clínica veterinária, avalie as afirmativas sobre ator, casos de uso, relacionamento entre casos e uso de extend. I. Um ator pode fornecer informações, receber informações ou ambas. II. Casos de uso descrevem funcionalidades do sistema e são transações executadas nele. III. Cada caso de uso pode interagir com um ou mais atores e com outros casos de uso. IV. A seta extend é usada para mostrar comportamento opcional compartilhado entre casos de uso. Escolha uma: a. II e III, apenas. b. I e II, apenas. c. II, III e IV, apenas. d. I, II, III e IV. e. I, III e IV, apenas."
+    raw: "Questão 1. Em um diagrama de casos de uso de uma clínica veterinária, avalie as afirmativas sobre ator, casos de uso, relacionamento entre casos e uso de extend. I. Um ator pode fornecer informações, receber informações ou ambas. II. Casos de uso descrevem funcionalidades do sistema e são transações executadas nele. III. Cada caso de uso pode interagir com um ou mais atores e com outros casos de uso. IV. A seta extend é usada para mostrar comportamento opcional compartilhado entre casos de uso. Escolha uma: a. II e III, apenas. b. I e II, apenas. c. II, III e IV, apenas. d. I, II, III e IV. e. I, III e IV, apenas.",
+    figure: "./assets/3.3-1-7.png"
   },
   {
     id: "3.3-2-8",
@@ -218,7 +222,8 @@ const questions = [
     id: "4.3-1-1",
     unit: "4.3",
     answer: "b",
-    raw: "Questão 1. Sobre a estrutura de diagramas da UML 2.5.1, julgue as afirmativas e assinale a sequência correta. Escolha uma: a. F – F – F. b. F – F – V. c. V – V – V. d. F – V – F. e. V – V – F."
+    raw: "Questão 1. Sobre a estrutura de diagramas da UML 2.5.1, julgue as afirmativas e assinale a sequência correta. Escolha uma: a. F – F – F. b. F – F – V. c. V – V – V. d. F – V – F. e. V – V – F.",
+    figure: "./assets/4.3-1-1.png"
   },
   {
     id: "4.3-2-2",
@@ -274,7 +279,8 @@ const questions = [
     unit: "4.3",
     answer: null,
     raw: "Questão 4. Sobre Diagrama de Caso de Uso, avalie as afirmativas. I. O diagrama de caso de uso pode guiar o desenvolvimento do projeto, inclusive implementação e testes. II. No diagrama, o boneco representa o processo e a elipse representa a relação entre processos. III. Os principais elementos do diagrama são ator, caso de uso e relacionamento. IV. Um ator sistêmico pode ser um software, sistema completo, módulo ou componente que executa a funcionalidade especificada pelo caso de uso. Escolha uma: a. I e II, apenas. b. I, II e III, apenas. c. I, II, III e IV. d. II, III e IV, apenas. e. I, II e IV, apenas.",
-    note: "Gabarito não identificado com segurança no PDF, mas as alternativas foram recuperadas."
+    note: "Gabarito não identificado com segurança no PDF, mas as alternativas foram recuperadas.",
+    figure: "./assets/4.3-4-10.png"
   },
   {
     id: "4.3-5-11",

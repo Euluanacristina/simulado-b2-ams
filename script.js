@@ -82,9 +82,14 @@ function renderQuestion() {
     }
   }
 
+  const figureHtml = question.figure
+    ? `<div class="question-figure"><img src="${question.figure}" alt="Figura da questão ${question.id}"></div>`
+    : '';
+
   quizCard.innerHTML = `
     <div class="question-meta">Unidade ${question.unit} • ID ${question.id}</div>
     <div class="question-text">${parsed.stem}</div>
+    ${figureHtml}
     <div class="option-list">${optionsHtml}</div>
     ${feedback}
   `;
@@ -139,7 +144,7 @@ function finishQuiz() {
       <div class="result-item"><strong>Respondidas</strong>${answered.length}</div>
       <div class="result-item"><strong>Questões com gabarito detectado</strong>${gradable.length}</div>
       <div class="result-item"><strong>Acertos nas corrigíveis</strong>${correct.length}</div>
-      <div class="result-item"><strong>Observação</strong>Algumas questões foram extraídas dos PDFs com texto incompleto ou sem gabarito automático; elas continuam disponíveis para estudo.</div>
+      <div class="result-item"><strong>Observação</strong>Algumas questões continuam sem gabarito confirmado, mas permanecem disponíveis para revisão e estudo.</div>
     </div>
   `;
 }
