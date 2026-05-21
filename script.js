@@ -69,7 +69,7 @@ function renderQuestion() {
           </label>
         `;
       }).join('')
-    : '<p class="muted">Essa questão precisa de revisão manual do enunciado, mas já foi incluída no simulado.</p>';
+    : '<p class="muted">Questão exibida em modo de estudo. O enunciado foi recuperado, mas as alternativas completas não estavam legíveis na extração original.</p>';
 
   let feedback = '';
   if (showFeedback) {
@@ -78,7 +78,7 @@ function renderQuestion() {
         ? '<div class="feedback">Resposta correta.</div>'
         : `<div class="feedback">Resposta marcada: ${selected.toUpperCase()}. Gabarito detectado: ${question.answer.toUpperCase()}.</div>`;
     } else {
-      feedback = '<div class="feedback">Questão incluída para estudo, mas o gabarito não foi detectado automaticamente no PDF.</div>';
+      feedback = '<div class="feedback">Questão disponível para estudo. O gabarito ou as alternativas completas não puderam ser recuperados com segurança da extração original.</div>';
     }
   }
 
