@@ -1,4 +1,4 @@
-const questions = [
+let questions = [
   {
     topic: "Engenharia de Requisitos",
     question: "O que é Engenharia de Requisitos?",
@@ -493,6 +493,22 @@ const questions = [
   }
 ];
 
+questions = questions.map((question) => {
+  const correctOption = question.options[question.answer];
+  const shuffledOptions = [...question.options];
+
+  for (let i = shuffledOptions.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledOptions[i], shuffledOptions[j]] = [shuffledOptions[j], shuffledOptions[i]];
+  }
+
+  return {
+    ...question,
+    options: shuffledOptions,
+    answer: shuffledOptions.indexOf(correctOption)
+  };
+});
+
 const summaries = [
   {
     title: "Engenharia de Requisitos",
@@ -582,6 +598,12 @@ const summaries = [
     ]
   }
 ];
+
+const APP_VERSION = "ams-random-options-v2";
+if (localStorage.getItem("amsVersion") !== APP_VERSION) {
+  localStorage.removeItem("amsAnswers");
+  localStorage.setItem("amsVersion", APP_VERSION);
+}
 
 const state = {
   currentIndex: 0,
