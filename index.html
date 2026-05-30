@@ -1,74 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simulado B2 - AMS</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <main class="app">
-    <header class="hero">
-      <p class="eyebrow">B2 • Análise e Modelagem de Sistemas</p>
-      <h1>Simulado</h1>
-      <p class="subtitle">Questões das Unidades 3 e 4 para revisar antes da prova.</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simulado de Terça - AMS</title>
+    <meta
+      name="description"
+      content="Simulado interativo de Análise e Modelagem de Sistemas com resumo, modo claro/escuro e revisão de erros."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Análise e Modelagem de Sistemas</p>
+        <h1>Simulado de Terça</h1>
+      </div>
+      <button id="themeToggle" class="theme-toggle" type="button">Modo escuro</button>
     </header>
 
-    <section class="topbar">
-      <div class="filter-group">
-        <label for="unitFilter">Filtrar por unidade</label>
-        <select id="unitFilter">
-          <option value="all">Todas</option>
-          <option value="3.1">3.1</option>
-          <option value="3.2">3.2</option>
-          <option value="3.3">3.3</option>
-          <option value="4.1">4.1</option>
-          <option value="4.2">4.2</option>
-          <option value="4.3">4.3</option>
-        </select>
-      </div>
-      <div class="action-group">
-        <button id="themeToggleBtn" type="button">Modo escuro</button>
-        <button id="shuffleBtn" type="button">Embaralhar</button>
-        <button id="resetBtn" type="button">Refazer Simulado</button>
-      </div>
-    </section>
+    <main class="layout">
+      <section class="stats" aria-label="Desempenho">
+        <article>
+          <span>Respondidas</span>
+          <strong id="answeredCount">0</strong>
+        </article>
+        <article class="ok">
+          <span>Acertos</span>
+          <strong id="correctCount">0</strong>
+        </article>
+        <article class="bad">
+          <span>Erros</span>
+          <strong id="wrongCount">0</strong>
+        </article>
+        <article>
+          <span>Aproveitamento</span>
+          <strong id="scorePercent">0%</strong>
+        </article>
+      </section>
 
-    <section class="status-panel">
-      <div class="status-item">
-        <span class="status-label">Progresso</span>
-        <strong id="progressText">Questão 1 de 1</strong>
-      </div>
-      <div class="status-item">
-        <span class="status-label">Respondidas</span>
-        <strong id="scoreText">Respondidas: 0/0</strong>
-      </div>
-      <div class="status-item">
-        <span class="status-label">Acertos</span>
-        <strong id="correctText">Acertos: 0</strong>
-      </div>
-      <div class="status-item">
-        <span class="status-label">Erros</span>
-        <strong id="wrongText">Erros: 0</strong>
-      </div>
-    </section>
+      <nav class="tabs" aria-label="Seções">
+        <button class="tab active" type="button" data-panel="quiz">Simulado</button>
+        <button class="tab" type="button" data-panel="summary">Resumo</button>
+        <button class="tab" type="button" data-panel="review">Revisar erros</button>
+      </nav>
 
-    <section id="quizCard" class="card question-card"></section>
+      <section class="panel active" id="quizPanel">
+        <div class="toolbar">
+          <label for="topicFilter">Tema</label>
+          <select id="topicFilter"></select>
+          <button id="shuffleButton" type="button">Embaralhar</button>
+          <button id="resetButton" type="button">Reiniciar</button>
+        </div>
 
-    <section class="nav">
-      <button id="prevBtn" type="button">Anterior</button>
-      <button id="nextBtn" type="button">Próxima</button>
-      <button id="finishBtn" type="button">Finalizar</button>
-    </section>
+        <div class="progress">
+          <div class="track"><div id="progressBar" class="bar"></div></div>
+          <span id="progressText">0 de 0</span>
+        </div>
 
-    <section id="resultCard" class="card hidden"></section>
+        <article class="question-card">
+          <div class="question-meta">
+            <span id="questionTopic"></span>
+            <span id="questionNumber"></span>
+          </div>
+          <h2 id="questionText"></h2>
+          <div id="optionsList" class="options"></div>
+          <div id="feedbackBox" class="feedback" hidden></div>
+          <div class="actions">
+            <button id="prevButton" type="button">Anterior</button>
+            <button id="nextButton" type="button">Próxima</button>
+          </div>
+        </article>
+      </section>
 
-    <footer class="page-note">
-      <p>Material organizado para estudo e revisão das unidades da prova B2.</p>
-    </footer>
-  </main>
+      <section class="panel" id="summaryPanel">
+        <div class="heading">
+          <p class="eyebrow">Resumo explicado</p>
+          <h2>Matérias da prova</h2>
+        </div>
+        <div id="summaryList" class="summary-list"></div>
+      </section>
 
-  <script src="./questions.js"></script>
-  <script src="./script.js"></script>
-</body>
+      <section class="panel" id="reviewPanel">
+        <div class="heading">
+          <p class="eyebrow">Revisão direcionada</p>
+          <h2>Questões que você errou</h2>
+        </div>
+        <div id="reviewList" class="review-list"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
 </html>
