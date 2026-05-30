@@ -1,513 +1,497 @@
-let questions = [
+const questions = [
   {
-    topic: "Engenharia de Requisitos",
-    question: "O que é Engenharia de Requisitos?",
-    options: [
-      "Área responsável por descobrir, analisar, documentar, validar e gerenciar o que o sistema deve fazer.",
+    "topic": "Engenharia de Requisitos",
+    "question": "O que é Engenharia de Requisitos?",
+    "options": [
       "Técnica usada apenas para desenhar telas do sistema.",
+      "Área responsável por descobrir, analisar, documentar, validar e gerenciar o que o sistema deve fazer.",
       "Processo exclusivo de programação em Java.",
       "Área que cuida somente da compra de equipamentos."
     ],
-    answer: 0,
-    explanation: "A Engenharia de Requisitos garante que o software seja desenvolvido conforme a necessidade do cliente."
+    "answer": 1,
+    "explanation": "A Engenharia de Requisitos garante que o software seja desenvolvido conforme a necessidade do cliente."
   },
   {
-    topic: "Engenharia de Requisitos",
-    question: "Qual é o objetivo principal da Engenharia de Requisitos?",
-    options: [
-      "Garantir que o software seja desenvolvido exatamente como o cliente precisa.",
+    "topic": "Engenharia de Requisitos",
+    "question": "Qual é o objetivo principal da Engenharia de Requisitos?",
+    "options": [
       "Eliminar toda documentação do projeto.",
       "Definir apenas a linguagem de programação.",
+      "Garantir que o software seja desenvolvido exatamente como o cliente precisa.",
       "Criar somente o banco de dados."
     ],
-    answer: 0,
-    explanation: "O foco é entender, validar e controlar aquilo que o sistema deve entregar."
+    "answer": 2,
+    "explanation": "O foco é entender, validar e controlar aquilo que o sistema deve entregar."
   },
   {
-    topic: "Requisitos",
-    question: "Um requisito pode ser entendido como:",
-    options: [
-      "Uma necessidade do sistema, função, restrição, qualidade ou serviço oferecido.",
+    "topic": "Requisitos",
+    "question": "Um requisito pode ser entendido como:",
+    "options": [
       "Um erro encontrado no código-fonte.",
       "Uma cor escolhida para o layout.",
-      "Um tipo de cabo de rede."
+      "Um tipo de cabo de rede.",
+      "Uma necessidade do sistema, função, restrição, qualidade ou serviço oferecido."
     ],
-    answer: 0,
-    explanation: "Requisito é aquilo que o sistema precisa fazer ou respeitar."
+    "answer": 3,
+    "explanation": "Requisito é aquilo que o sistema precisa fazer ou respeitar."
   },
   {
-    topic: "RF x RNF",
-    question: "Requisitos Funcionais mostram:",
-    options: [
+    "topic": "RF x RNF",
+    "question": "Requisitos Funcionais mostram:",
+    "options": [
       "O que o sistema faz.",
       "Apenas a velocidade do servidor.",
       "Somente a linguagem usada.",
       "Como será o orçamento."
     ],
-    answer: 0,
-    explanation: "RF descreve funções e ações executadas pelo sistema."
+    "answer": 0,
+    "explanation": "RF descreve funções e ações executadas pelo sistema."
   },
   {
-    topic: "RF x RNF",
-    question: "Qual alternativa é exemplo de requisito funcional?",
-    options: [
-      "O sistema deve cadastrar alunos.",
+    "topic": "RF x RNF",
+    "question": "Qual alternativa é exemplo de requisito funcional?",
+    "options": [
       "O sistema deve responder em até 7 segundos.",
+      "O sistema deve cadastrar alunos.",
       "O sistema deverá ser implementado em Java.",
       "Apenas administradores podem acessar relatórios."
     ],
-    answer: 0,
-    explanation: "Cadastrar alunos é uma função do sistema, portanto é RF."
+    "answer": 1,
+    "explanation": "Cadastrar alunos é uma função do sistema, portanto é RF."
   },
   {
-    topic: "RF x RNF",
-    question: "Requisitos Não Funcionais mostram:",
-    options: [
-      "Como o sistema deve funcionar.",
+    "topic": "RF x RNF",
+    "question": "Requisitos Não Funcionais mostram:",
+    "options": [
       "Somente quais telas existem.",
       "Apenas cadastros do sistema.",
+      "Como o sistema deve funcionar.",
       "A lista de clientes."
     ],
-    answer: 0,
-    explanation: "RNF está ligado a qualidade, restrição, desempenho, segurança, usabilidade e tecnologia."
+    "answer": 2,
+    "explanation": "RNF está ligado a qualidade, restrição, desempenho, segurança, usabilidade e tecnologia."
   },
   {
-    topic: "RF x RNF",
-    question: "Qual alternativa é exemplo de requisito não funcional?",
-    options: [
-      "O sistema deve responder em até 7 segundos.",
+    "topic": "RF x RNF",
+    "question": "Qual alternativa é exemplo de requisito não funcional?",
+    "options": [
       "O sistema deve cadastrar usuários.",
       "O sistema deve emitir boletos.",
-      "O sistema deve consultar notas."
+      "O sistema deve consultar notas.",
+      "O sistema deve responder em até 7 segundos."
     ],
-    answer: 0,
-    explanation: "Tempo de resposta é uma métrica de desempenho, logo é RNF."
+    "answer": 3,
+    "explanation": "Tempo de resposta é uma métrica de desempenho, logo é RNF."
   },
   {
-    topic: "RF x RNF",
-    question: "Dica de prova: se um requisito pode ser medido, geralmente ele é:",
-    options: [
+    "topic": "RF x RNF",
+    "question": "Dica de prova: se um requisito pode ser medido, geralmente ele é:",
+    "options": [
       "Não funcional.",
       "Funcional.",
       "Classe.",
       "Objeto."
     ],
-    answer: 0,
-    explanation: "Tempo, velocidade, confiabilidade e desempenho costumam ser RNF."
+    "answer": 0,
+    "explanation": "Tempo, velocidade, confiabilidade e desempenho costumam ser RNF."
   },
   {
-    topic: "Requisitos de Domínio",
-    question: "Requisitos de domínio são:",
-    options: [
-      "Regras específicas do negócio.",
+    "topic": "Requisitos de Domínio",
+    "question": "Requisitos de domínio são:",
+    "options": [
       "Somente botões da interface.",
+      "Regras específicas do negócio.",
       "Métodos de uma classe.",
       "Diagramas UML obrigatórios."
     ],
-    answer: 0,
-    explanation: "Exemplo do material: aluno só será aprovado se atingir 3000 pontos."
+    "answer": 1,
+    "explanation": "Exemplo do material: aluno só será aprovado se atingir 3000 pontos."
   },
   {
-    topic: "Qualidade dos Requisitos",
-    question: "Um bom requisito deve ser:",
-    options: [
-      "Exato, preciso, completo, consistente, prioritário, verificável, modificável e rastreável.",
+    "topic": "Qualidade dos Requisitos",
+    "question": "Um bom requisito deve ser:",
+    "options": [
       "Vago, incompleto e impossível de testar.",
       "Sempre escrito sem prioridade.",
+      "Exato, preciso, completo, consistente, prioritário, verificável, modificável e rastreável.",
       "Apenas visual e sem validação."
     ],
-    answer: 0,
-    explanation: "Essas qualidades ajudam a evitar ambiguidade, erro e retrabalho."
+    "answer": 2,
+    "explanation": "Essas qualidades ajudam a evitar ambiguidade, erro e retrabalho."
   },
   {
-    topic: "Prioridade",
-    question: "Prioridade essencial significa que:",
-    options: [
-      "Sem o requisito, o sistema não funciona.",
+    "topic": "Prioridade",
+    "question": "Prioridade essencial significa que:",
+    "options": [
       "O requisito é opcional.",
       "O requisito é bonito, mas desnecessário.",
-      "O requisito nunca deve ser implementado."
+      "O requisito nunca deve ser implementado.",
+      "Sem o requisito, o sistema não funciona."
     ],
-    answer: 0,
-    explanation: "Essencial é aquilo que o sistema precisa ter para funcionar."
+    "answer": 3,
+    "explanation": "Essencial é aquilo que o sistema precisa ter para funcionar."
   },
   {
-    topic: "Prioridade",
-    question: "Prioridade desejável significa:",
-    options: [
+    "topic": "Prioridade",
+    "question": "Prioridade desejável significa:",
+    "options": [
       "Opcional.",
       "Obrigatória para o sistema funcionar.",
       "Erro de requisito.",
       "Regra de encapsulamento."
     ],
-    answer: 0,
-    explanation: "Desejável é algo que pode agregar valor, mas não é obrigatório."
+    "answer": 0,
+    "explanation": "Desejável é algo que pode agregar valor, mas não é obrigatório."
   },
   {
-    topic: "Requisito x Regra de Negócio",
-    question: "A diferença correta entre requisito e regra de negócio é:",
-    options: [
-      "Requisito diz o que o sistema faz; regra de negócio diz como isso acontece no negócio.",
+    "topic": "Requisito x Regra de Negócio",
+    "question": "A diferença correta entre requisito e regra de negócio é:",
+    "options": [
       "Requisito e regra de negócio são sempre a mesma coisa.",
+      "Requisito diz o que o sistema faz; regra de negócio diz como isso acontece no negócio.",
       "Regra de negócio é sempre um código Java.",
       "Requisito só existe em UML."
     ],
-    answer: 0,
-    explanation: "Exemplo: emitir boleto é requisito; boleto só após pagamento aprovado é regra de negócio."
+    "answer": 1,
+    "explanation": "Exemplo: emitir boleto é requisito; boleto só após pagamento aprovado é regra de negócio."
   },
   {
-    topic: "Etapas de Requisitos",
-    question: "Qual etapa define escopo e envolvidos?",
-    options: [
-      "Concepção.",
+    "topic": "Etapas de Requisitos",
+    "question": "Qual etapa define escopo e envolvidos?",
+    "options": [
       "Validação.",
       "Polimorfismo.",
+      "Concepção.",
       "Portabilidade."
     ],
-    answer: 0,
-    explanation: "Concepção define escopo e participantes do projeto."
+    "answer": 2,
+    "explanation": "Concepção define escopo e participantes do projeto."
   },
   {
-    topic: "Etapas de Requisitos",
-    question: "Elicitação é a etapa de:",
-    options: [
-      "Levantamento de requisitos.",
+    "topic": "Etapas de Requisitos",
+    "question": "Elicitação é a etapa de:",
+    "options": [
       "Exclusão de classes.",
       "Programação final.",
-      "Criação de herança."
+      "Criação de herança.",
+      "Levantamento de requisitos."
     ],
-    answer: 0,
-    explanation: "Elicitação usa técnicas como entrevista, observação e questionário."
+    "answer": 3,
+    "explanation": "Elicitação usa técnicas como entrevista, observação e questionário."
   },
   {
-    topic: "Etapas de Requisitos",
-    question: "Qual alternativa traz técnicas de elicitação?",
-    options: [
+    "topic": "Etapas de Requisitos",
+    "question": "Qual alternativa traz técnicas de elicitação?",
+    "options": [
       "Entrevista, observação e questionário.",
       "Herança, classe e objeto.",
       "XML, JSON e UML.",
       "Java, Python e C#."
     ],
-    answer: 0,
-    explanation: "Essas técnicas ajudam a levantar necessidades com usuários e stakeholders."
+    "answer": 0,
+    "explanation": "Essas técnicas ajudam a levantar necessidades com usuários e stakeholders."
   },
   {
-    topic: "Etapas de Requisitos",
-    question: "A etapa de negociação serve para:",
-    options: [
-      "Resolver conflitos entre requisitos.",
+    "topic": "Etapas de Requisitos",
+    "question": "A etapa de negociação serve para:",
+    "options": [
       "Criar apenas o layout.",
+      "Resolver conflitos entre requisitos.",
       "Apagar documentação.",
       "Substituir o cliente."
     ],
-    answer: 0,
-    explanation: "Negociação resolve conflitos e alinha prioridades."
+    "answer": 1,
+    "explanation": "Negociação resolve conflitos e alinha prioridades."
   },
   {
-    topic: "Etapas de Requisitos",
-    question: "Na validação, quem confirma se os requisitos estão corretos?",
-    options: [
-      "O cliente.",
+    "topic": "Etapas de Requisitos",
+    "question": "Na validação, quem confirma se os requisitos estão corretos?",
+    "options": [
       "A linguagem Java.",
       "O compilador.",
+      "O cliente.",
       "O diagrama de classe sozinho."
     ],
-    answer: 0,
-    explanation: "O cliente participa da validação para confirmar se o entendimento está correto."
+    "answer": 2,
+    "explanation": "O cliente participa da validação para confirmar se o entendimento está correto."
   },
   {
-    topic: "Escopo",
-    question: "Escopo define:",
-    options: [
-      "Limites do projeto, o que será feito e recursos usados.",
+    "topic": "Escopo",
+    "question": "Escopo define:",
+    "options": [
       "Apenas a cor do sistema.",
       "Somente o método mover().",
-      "O tipo de mouse usado."
+      "O tipo de mouse usado.",
+      "Limites do projeto, o que será feito e recursos usados."
     ],
-    answer: 0,
-    explanation: "Escopo é importante para orçamento, cronograma e controle do projeto."
+    "answer": 3,
+    "explanation": "Escopo é importante para orçamento, cronograma e controle do projeto."
   },
   {
-    topic: "Métricas RNF",
-    question: "Velocidade, em requisitos não funcionais, está ligada a:",
-    options: [
+    "topic": "Métricas RNF",
+    "question": "Velocidade, em requisitos não funcionais, está ligada a:",
+    "options": [
       "Tempo de resposta.",
       "Classe pai.",
       "Método privado.",
       "Cadastro de usuários."
     ],
-    answer: 0,
-    explanation: "Velocidade mede tempo de resposta do sistema."
+    "answer": 0,
+    "explanation": "Velocidade mede tempo de resposta do sistema."
   },
   {
-    topic: "Métricas RNF",
-    question: "Portabilidade significa:",
-    options: [
-      "Funcionar em diferentes sistemas.",
+    "topic": "Métricas RNF",
+    "question": "Portabilidade significa:",
+    "options": [
       "Proteger o saldo bancário.",
+      "Funcionar em diferentes sistemas.",
       "Criar uma subclasse.",
       "Cadastrar relatórios."
     ],
-    answer: 0,
-    explanation: "Portabilidade é a capacidade de funcionar em ambientes diferentes."
+    "answer": 1,
+    "explanation": "Portabilidade é a capacidade de funcionar em ambientes diferentes."
   },
   {
-    topic: "Métricas RNF",
-    question: "Confiabilidade está relacionada a:",
-    options: [
-      "Estabilidade do sistema.",
+    "topic": "Métricas RNF",
+    "question": "Confiabilidade está relacionada a:",
+    "options": [
       "Apenas herança.",
       "Somente cadastro.",
+      "Estabilidade do sistema.",
       "Cor de tela."
     ],
-    answer: 0,
-    explanation: "Confiabilidade trata da estabilidade e confiança no funcionamento."
+    "answer": 2,
+    "explanation": "Confiabilidade trata da estabilidade e confiança no funcionamento."
   },
   {
-    topic: "Orientação a Objetos",
-    question: "Paradigma significa:",
-    options: [
-      "Modelo ou padrão para resolver problemas.",
+    "topic": "Orientação a Objetos",
+    "question": "Paradigma significa:",
+    "options": [
       "Um erro no banco de dados.",
       "Um tipo de requisito funcional.",
-      "Uma regra de negócio fixa."
+      "Uma regra de negócio fixa.",
+      "Modelo ou padrão para resolver problemas."
     ],
-    answer: 0,
-    explanation: "O material cita paradigmas estruturado, funcional e orientado a objetos."
+    "answer": 3,
+    "explanation": "O material cita paradigmas estruturado, funcional e orientado a objetos."
   },
   {
-    topic: "Orientação a Objetos",
-    question: "Orientação a Objetos é um modelo baseado em:",
-    options: [
+    "topic": "Orientação a Objetos",
+    "question": "Orientação a Objetos é um modelo baseado em:",
+    "options": [
       "Objetos do mundo real.",
       "Apenas tabelas de banco.",
       "Somente textos de requisitos.",
       "Arquivos PDF."
     ],
-    answer: 0,
-    explanation: "OO organiza sistemas com objetos, classes, atributos e métodos."
+    "answer": 0,
+    "explanation": "OO organiza sistemas com objetos, classes, atributos e métodos."
   },
   {
-    topic: "Classe x Objeto",
-    question: "Classe é:",
-    options: [
-      "Molde do objeto.",
+    "topic": "Classe x Objeto",
+    "question": "Classe é:",
+    "options": [
       "Instância já criada.",
+      "Molde do objeto.",
       "Tempo de resposta.",
       "Restrição de segurança."
     ],
-    answer: 0,
-    explanation: "Classe define atributos e métodos; objeto é criado a partir dela."
+    "answer": 1,
+    "explanation": "Classe define atributos e métodos; objeto é criado a partir dela."
   },
   {
-    topic: "Classe x Objeto",
-    question: "Objeto é:",
-    options: [
-      "Instância da classe.",
+    "topic": "Classe x Objeto",
+    "question": "Objeto é:",
+    "options": [
       "Molde abstrato apenas.",
       "Uma técnica de elicitação.",
+      "Instância da classe.",
       "Uma prioridade desejável."
     ],
-    answer: 0,
-    explanation: "Macete: classe = molde; objeto = produto criado a partir do molde."
+    "answer": 2,
+    "explanation": "Macete: classe = molde; objeto = produto criado a partir do molde."
   },
   {
-    topic: "Classe x Objeto",
-    question: "Em uma classe Carro, cor, modelo e velocidade são exemplos de:",
-    options: [
-      "Atributos.",
+    "topic": "Classe x Objeto",
+    "question": "Em uma classe Carro, cor, modelo e velocidade são exemplos de:",
+    "options": [
       "Métodos.",
       "Requisitos de domínio.",
-      "Etapas de validação."
+      "Etapas de validação.",
+      "Atributos."
     ],
-    answer: 0,
-    explanation: "Atributos são características do objeto."
+    "answer": 3,
+    "explanation": "Atributos são características do objeto."
   },
   {
-    topic: "Classe x Objeto",
-    question: "Em uma classe Carro, acelerar() e frear() são exemplos de:",
-    options: [
+    "topic": "Classe x Objeto",
+    "question": "Em uma classe Carro, acelerar() e frear() são exemplos de:",
+    "options": [
       "Métodos.",
       "Atributos.",
       "Escopo.",
       "RNF."
     ],
-    answer: 0,
-    explanation: "Métodos são ações do objeto."
+    "answer": 0,
+    "explanation": "Métodos são ações do objeto."
   },
   {
-    topic: "Pilares OO",
-    question: "Abstração significa:",
-    options: [
-      "Representar um objeto do mundo real sem detalhes desnecessários.",
+    "topic": "Pilares OO",
+    "question": "Abstração significa:",
+    "options": [
       "Expor todos os dados internos.",
+      "Representar um objeto do mundo real sem detalhes desnecessários.",
       "Apagar todos os métodos.",
       "Criar apenas requisitos não funcionais."
     ],
-    answer: 0,
-    explanation: "Abstração foca no que importa para o problema."
+    "answer": 1,
+    "explanation": "Abstração foca no que importa para o problema."
   },
   {
-    topic: "Pilares OO",
-    question: "Herança permite que:",
-    options: [
-      "Uma classe herde características de outra.",
+    "topic": "Pilares OO",
+    "question": "Herança permite que:",
+    "options": [
       "Um requisito seja sempre opcional.",
       "O sistema ignore regras de negócio.",
+      "Uma classe herde características de outra.",
       "O cliente valide sozinho o código."
     ],
-    answer: 0,
-    explanation: "Exemplo: Carro herda características de Veículo."
+    "answer": 2,
+    "explanation": "Exemplo: Carro herda características de Veículo."
   },
   {
-    topic: "Pilares OO",
-    question: "Classe pai e classe filha também podem ser chamadas de:",
-    options: [
-      "Superclasse e subclasse.",
+    "topic": "Pilares OO",
+    "question": "Classe pai e classe filha também podem ser chamadas de:",
+    "options": [
       "RF e RNF.",
       "Escopo e orçamento.",
-      "XML e JSON."
+      "XML e JSON.",
+      "Superclasse e subclasse."
     ],
-    answer: 0,
-    explanation: "Na herança, classe pai = superclasse; classe filha = subclasse."
+    "answer": 3,
+    "explanation": "Na herança, classe pai = superclasse; classe filha = subclasse."
   },
   {
-    topic: "Pilares OO",
-    question: "Encapsulamento tem como objetivo:",
-    options: [
+    "topic": "Pilares OO",
+    "question": "Encapsulamento tem como objetivo:",
+    "options": [
       "Proteger dados e esconder detalhes internos do objeto.",
       "Criar relatórios automaticamente.",
       "Fazer o sistema responder em 7 segundos.",
       "Transformar requisito em regra de negócio."
     ],
-    answer: 0,
-    explanation: "Encapsulamento impede acesso indevido, como proteger saldo bancário."
+    "answer": 0,
+    "explanation": "Encapsulamento impede acesso indevido, como proteger saldo bancário."
   },
   {
-    topic: "Pilares OO",
-    question: "Nos símbolos UML, '+' indica:",
-    options: [
-      "Público.",
+    "topic": "Pilares OO",
+    "question": "Nos símbolos UML, '+' indica:",
+    "options": [
       "Privado.",
+      "Público.",
       "Desejável.",
       "Não funcional."
     ],
-    answer: 0,
-    explanation: "No material: '+' = público e '-' = privado."
+    "answer": 1,
+    "explanation": "No material: '+' = público e '-' = privado."
   },
   {
-    topic: "Pilares OO",
-    question: "Nos símbolos UML, '-' indica:",
-    options: [
-      "Privado.",
+    "topic": "Pilares OO",
+    "question": "Nos símbolos UML, '-' indica:",
+    "options": [
       "Público.",
       "Essencial.",
+      "Privado.",
       "Funcional."
     ],
-    answer: 0,
-    explanation: "O sinal '-' representa visibilidade privada."
+    "answer": 2,
+    "explanation": "O sinal '-' representa visibilidade privada."
   },
   {
-    topic: "Pilares OO",
-    question: "Polimorfismo significa:",
-    options: [
-      "Mesmo método com comportamentos diferentes.",
+    "topic": "Pilares OO",
+    "question": "Polimorfismo significa:",
+    "options": [
       "Classe sem atributos.",
       "Requisito impossível de medir.",
-      "Somente uma regra de orçamento."
+      "Somente uma regra de orçamento.",
+      "Mesmo método com comportamentos diferentes."
     ],
-    answer: 0,
-    explanation: "Exemplo: mover() pode significar nadar para peixe, voar para pássaro e pular para anfíbio."
+    "answer": 3,
+    "explanation": "Exemplo: mover() pode significar nadar para peixe, voar para pássaro e pular para anfíbio."
   },
   {
-    topic: "UML",
-    question: "UML significa:",
-    options: [
+    "topic": "UML",
+    "question": "UML significa:",
+    "options": [
       "Linguagem de Modelagem Unificada.",
       "Lista de Métodos Locais.",
       "Unidade de Métrica Lógica.",
       "Usuário Mestre Local."
     ],
-    answer: 0,
-    explanation: "UML serve para modelar sistemas, diagramas, classes e relacionamentos."
+    "answer": 0,
+    "explanation": "UML serve para modelar sistemas, diagramas, classes e relacionamentos."
   },
   {
-    topic: "UML",
-    question: "A UML serve para:",
-    options: [
-      "Modelar sistemas, criar diagramas e representar classes e relacionamentos.",
+    "topic": "UML",
+    "question": "A UML serve para:",
+    "options": [
       "Enviar e-mails automaticamente.",
+      "Modelar sistemas, criar diagramas e representar classes e relacionamentos.",
       "Definir apenas cronograma.",
       "Medir tempo de resposta."
     ],
-    answer: 0,
-    explanation: "UML ajuda a representar visualmente a estrutura e comportamento do sistema."
+    "answer": 1,
+    "explanation": "UML ajuda a representar visualmente a estrutura e comportamento do sistema."
   },
   {
-    topic: "Processo Unificado",
-    question: "O Processo Unificado é um modelo de desenvolvimento:",
-    options: [
-      "Iterativo e incremental.",
+    "topic": "Processo Unificado",
+    "question": "O Processo Unificado é um modelo de desenvolvimento:",
+    "options": [
       "Sem documentação e sem etapas.",
       "Apenas visual.",
+      "Iterativo e incremental.",
       "Exclusivo para banco de dados."
     ],
-    answer: 0,
-    explanation: "Ele divide sistemas grandes em pequenas partes, reduzindo riscos."
+    "answer": 2,
+    "explanation": "Ele divide sistemas grandes em pequenas partes, reduzindo riscos."
   },
   {
-    topic: "Processo Unificado",
-    question: "Uma vantagem do Processo Unificado é:",
-    options: [
-      "Menos risco e mais organização.",
+    "topic": "Processo Unificado",
+    "question": "Uma vantagem do Processo Unificado é:",
+    "options": [
       "Mais conflito entre requisitos.",
       "Eliminar validação com cliente.",
-      "Impedir reutilização de código."
+      "Impedir reutilização de código.",
+      "Menos risco e mais organização."
     ],
-    answer: 0,
-    explanation: "Por ser iterativo e incremental, o PU ajuda a organizar entregas."
+    "answer": 3,
+    "explanation": "Por ser iterativo e incremental, o PU ajuda a organizar entregas."
   },
   {
-    topic: "Orientação a Objetos",
-    question: "Qual é uma vantagem da Orientação a Objetos?",
-    options: [
+    "topic": "Orientação a Objetos",
+    "question": "Qual é uma vantagem da Orientação a Objetos?",
+    "options": [
       "Reutilização de código e facilidade de manutenção.",
       "Obrigar ausência de documentação.",
       "Impedir organização.",
       "Eliminar classes."
     ],
-    answer: 0,
-    explanation: "OO favorece reutilização, organização, manutenção, flexibilidade e desenvolvimento mais rápido."
+    "answer": 0,
+    "explanation": "OO favorece reutilização, organização, manutenção, flexibilidade e desenvolvimento mais rápido."
   },
   {
-    topic: "Orientação a Objetos",
-    question: "Qual é uma desvantagem da Orientação a Objetos citada no material?",
-    options: [
-      "Requer conhecimento técnico e modelagem mais detalhada.",
+    "topic": "Orientação a Objetos",
+    "question": "Qual é uma desvantagem da Orientação a Objetos citada no material?",
+    "options": [
       "Nunca permite documentação.",
+      "Requer conhecimento técnico e modelagem mais detalhada.",
       "Não usa classes.",
       "Impede manutenção."
     ],
-    answer: 0,
-    explanation: "OO pode exigir mais conhecimento técnico, modelagem e documentação."
+    "answer": 1,
+    "explanation": "OO pode exigir mais conhecimento técnico, modelagem e documentação."
   }
 ];
-
-questions = questions.map((question) => {
-  const correctOption = question.options[question.answer];
-  const shuffledOptions = [...question.options];
-
-  for (let i = shuffledOptions.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffledOptions[i], shuffledOptions[j]] = [shuffledOptions[j], shuffledOptions[i]];
-  }
-
-  return {
-    ...question,
-    options: shuffledOptions,
-    answer: shuffledOptions.indexOf(correctOption)
-  };
-});
 
 const summaries = [
   {
@@ -599,7 +583,7 @@ const summaries = [
   }
 ];
 
-const APP_VERSION = "ams-random-options-v2";
+const APP_VERSION = "ams-static-mixed-options-v3";
 if (localStorage.getItem("amsVersion") !== APP_VERSION) {
   localStorage.removeItem("amsAnswers");
   localStorage.setItem("amsVersion", APP_VERSION);
